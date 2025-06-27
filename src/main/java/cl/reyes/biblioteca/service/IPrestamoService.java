@@ -3,6 +3,7 @@ package cl.reyes.biblioteca.service;
 import java.util.List;
 
 import cl.reyes.biblioteca.model.Prestamo;
+//import cl.reyes.biblioteca.response.PrestamoResponse;
 
 public interface IPrestamoService {
 

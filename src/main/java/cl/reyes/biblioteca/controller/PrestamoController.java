@@ -18,6 +18,7 @@ import cl.reyes.biblioteca.service.IPrestamoService;
 @RestController
 @RequestMapping("/api/crud/prestamo")
 public class PrestamoController {
+
     @Autowired
     IPrestamoService prestamoService;
 
