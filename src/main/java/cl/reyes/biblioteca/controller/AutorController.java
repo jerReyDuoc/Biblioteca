@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import cl.reyes.biblioteca.model.Autor;
-import cl.reyes.biblioteca.model.Cliente;
 import cl.reyes.biblioteca.service.IAutorService;
 
 @RestController

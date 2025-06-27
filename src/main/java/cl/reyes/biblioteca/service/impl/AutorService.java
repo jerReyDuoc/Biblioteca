@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cl.reyes.biblioteca.model.Autor;
-import cl.reyes.biblioteca.model.Cliente;
 import cl.reyes.biblioteca.repository.IAutorRepository;
 import cl.reyes.biblioteca.service.IAutorService;
 
