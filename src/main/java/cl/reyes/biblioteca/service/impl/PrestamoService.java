@@ -3,11 +3,13 @@ package cl.reyes.biblioteca.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import cl.reyes.biblioteca.model.Prestamo;
 import cl.reyes.biblioteca.repository.IPrestamoRepository;
 import cl.reyes.biblioteca.service.IPrestamoService;
 
+@Service
 public class PrestamoService implements IPrestamoService{
 
     @Autowired
