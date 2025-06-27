@@ -23,6 +23,8 @@ public class Libro {
     @Id
     private int idLibro;
     private String titulo;
-    private String genero;
+    private Genero genero;
+    private Autor autor;
+    private Editorial editorial;
 
 }
