@@ -4,6 +4,7 @@ import java.util.List;
 
 import cl.reyes.biblioteca.model.Prestamo;
 //import cl.reyes.biblioteca.response.PrestamoResponse;
+import cl.reyes.biblioteca.response.PrestamoResponse;
 
 public interface IPrestamoService {
 
@@ -16,5 +17,7 @@ public interface IPrestamoService {
     Prestamo update(Integer id, Prestamo prestamo);
 
     Prestamo delete(Integer id);
+
+    List<PrestamoResponse> getMorosos();
 
 }

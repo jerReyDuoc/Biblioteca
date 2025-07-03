@@ -15,4 +15,11 @@ public interface ILibroService {
     Libro update(Integer id, Libro libro);
 
     Libro delete(Integer id);
+
+    List<Libro> getByAutor(Integer id);
+
+    List<Libro> getByEditorial(Integer id);
+
+    List<Libro> getByGenero(Integer id);
+
 }

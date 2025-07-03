@@ -33,6 +33,9 @@ public class Prestamo {
     @Column(name = "fecha_termino")
     private Date fechaTermino;
 
+    @Column(name = "estado")
+    private Boolean estado;
+
     @ManyToOne
     @JoinColumn(name = "id_libro")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})

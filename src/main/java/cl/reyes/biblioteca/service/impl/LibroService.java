@@ -1,5 +1,6 @@
 package cl.reyes.biblioteca.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,48 @@ public class LibroService implements ILibroService {
         libroRepository.deleteById(id);
         return null;
     }
+
+    @Override
+    public List<Libro> getByAutor(Integer id) {
+        List<Libro> lLibro = new ArrayList<>();
+        
+        for (Libro libro : libroRepository.findAll()) {
+            if (libro.getAutor().getIdAutor() == id) {
+                Libro aux = libro;
+                lLibro.add(aux);
+            }
+        }
+
+        return lLibro;
+    }
+
+    @Override
+    public List<Libro> getByEditorial(Integer id) {
+        List<Libro> lLibro = new ArrayList<>();
+        
+        for (Libro libro : libroRepository.findAll()) {
+            if (libro.getEditorial().getIdEditorial() == id) {
+                Libro aux = libro;
+                lLibro.add(aux);
+            }
+        }
+
+        return lLibro;
+    }
+
+    @Override
+    public List<Libro> getByGenero(Integer id) {
+        List<Libro> lLibro = new ArrayList<>();
+        
+        for (Libro libro : libroRepository.findAll()) {
+            if (libro.getGenero().getIdGenero() == id) {
+                Libro aux = libro;
+                lLibro.add(aux);
+            }
+        }
+
+        return lLibro;
+    }
+
 
 }

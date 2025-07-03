@@ -1,6 +1,9 @@
 package cl.reyes.biblioteca.service.impl;
 
-//import java.util.ArrayList;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
@@ -9,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 import cl.reyes.biblioteca.model.Prestamo;
 import cl.reyes.biblioteca.repository.IPrestamoRepository;
-//import cl.reyes.biblioteca.response.PrestamoResponse;
+import cl.reyes.biblioteca.response.PrestamoResponse;
 import cl.reyes.biblioteca.service.IPrestamoService;
 
 @Service
@@ -53,5 +56,21 @@ public class PrestamoService implements IPrestamoService{
     public Prestamo delete(Integer id) {
         prestamoRepository.deleteById(id);
         return null;
+    }
+
+    @Override
+    public List<PrestamoResponse> getMorosos() {
+        List<Prestamo> lPres = (List<Prestamo>) prestamoRepository.findAll();
+        List<PrestamoResponse> lPresRes = new ArrayList<>();
+        LocalDate local = LocalDate.now();
+        Date today = Date.from(local.atStartOfDay(ZoneId.systemDefault()).toInstant());
+
+        for (Prestamo prestamo : lPres) {
+            if (prestamo.getEstado() && today.after(prestamo.getFechaTermino())) {
+                PrestamoResponse aux = modelMap.map(prestamo, PrestamoResponse.class);
+                lPresRes.add(aux);
+            }
+        }
+        return lPresRes;
     }
 }

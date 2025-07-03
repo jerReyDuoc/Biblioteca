@@ -16,6 +16,7 @@ public class PrestamoResponse {
     private int idPrestamo;
     private Date fechaInicio;
     private Date fechaTermino;
+    private Boolean estado;
     private LibroResponse libro;
     private ClienteResponse cliente;
 }

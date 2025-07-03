@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import cl.reyes.biblioteca.model.Prestamo;
+import cl.reyes.biblioteca.response.PrestamoResponse;
 import cl.reyes.biblioteca.service.IPrestamoService;
 
 @RestController
@@ -30,6 +31,11 @@ public class PrestamoController {
     @GetMapping("/{id}")
     public Prestamo getById (@PathVariable Integer id) {
         return prestamoService.getById(id);
+    }
+
+    @GetMapping("/morosos")
+    public List<PrestamoResponse> getMorosos () {
+        return prestamoService.getMorosos();
     }
 
     @PostMapping

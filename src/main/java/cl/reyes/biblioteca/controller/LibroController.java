@@ -32,6 +32,21 @@ public class LibroController {
         return libroService.getById(id);
     }
 
+    @GetMapping("/autor/{id}")
+    public List<Libro> getByAutor (@PathVariable Integer id){
+        return libroService.getByAutor(id);
+    }
+
+    @GetMapping("/editorial/{id}")
+    public List<Libro> getByEditorial (@PathVariable Integer id){
+        return libroService.getByEditorial(id);
+    }
+
+    @GetMapping("/genero/{id}")
+    public List<Libro> getByGenero (@PathVariable Integer id){
+        return libroService.getByGenero(id);
+    }
+
     @PostMapping
     public Libro insert (@RequestBody Libro libro) {
         return libroService.insert(libro);

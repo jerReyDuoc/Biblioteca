@@ -14,5 +14,4 @@ import lombok.Setter;
 public class LibroResponse {
 
     private String titulo;
-
 }
